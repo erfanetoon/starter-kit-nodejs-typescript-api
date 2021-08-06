@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_CONNECTION")
+}
+
+model articles {
+  id             Int      @id @default(autoincrement()) @db.UnsignedInt
+  title          String?  @db.VarChar(255)
+  body           String?  @db.Text
+  createDateTime DateTime @default(now()) @db.Timestamp(0)
+}
