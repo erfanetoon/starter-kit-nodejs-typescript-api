@@ -5,6 +5,10 @@
 ```bash
 import test.sql into your mysql server
 change .env db_connection details
+
+// these command for create schema for your database and generate data for use in @prisma/client
+npx prisma introspect
+npx prisma generate
 ```
 
 ## Getting Started
